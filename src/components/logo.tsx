@@ -1,34 +1,48 @@
-import { SproutIcon } from "@hugeicons/core-free-icons";
-import { HugeIcon } from "@/components/ui/hugeicon";
 import { cn } from "@/lib/utils";
 
 export function Logo({
   className,
   iconBoxClassName,
   textClassName,
+  wordmarkClassName,
+  subtitle = "Admin Console",
 }: {
   className?: string;
   iconBoxClassName?: string;
   textClassName?: string;
+  wordmarkClassName?: string;
+  subtitle?: string | null;
 }) {
   return (
-    <div className={cn("flex items-center gap-3", className)}>
-      <div
+    <div className={cn("flex items-center gap-2.5", className)}>
+      <span
         className={cn(
-          "flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm",
+          "grid size-10 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white ring-1 ring-black/5",
           iconBoxClassName,
         )}
       >
-        <HugeIcon icon={SproutIcon} size={18} />
-      </div>
-      <div className={cn("flex flex-col text-left leading-tight", textClassName)}>
-        <span className="text-sm font-bold tracking-tight text-foreground">
+        <img
+          src="/lorofy.png"
+          alt="Lorofy"
+          className="size-full scale-[1.22] object-contain"
+          draggable={false}
+        />
+      </span>
+      <span className={cn("flex min-w-0 flex-col text-left", textClassName)}>
+        <span
+          className={cn(
+            "font-display text-2xl leading-none tracking-wide text-foreground",
+            wordmarkClassName,
+          )}
+        >
           Lorofy
         </span>
-        <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-          Admin Console
-        </span>
-      </div>
+        {subtitle ? (
+          <span className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
+            {subtitle}
+          </span>
+        ) : null}
+      </span>
     </div>
   );
 }

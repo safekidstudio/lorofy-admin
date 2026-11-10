@@ -42,7 +42,7 @@ export function EditViewHeader({
       <div className="flex items-center gap-3">
         <ListButton />
         <div className="grid gap-1">
-          <h1 className="text-xl font-semibold tracking-tight">{title ?? defaultTitle}</h1>
+          <h1 className="font-display text-3xl leading-none tracking-wide md:text-4xl">{title ?? defaultTitle}</h1>
           {description && (
             <p className="max-w-2xl text-sm text-muted-foreground">{description}</p>
           )}

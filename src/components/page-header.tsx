@@ -21,10 +21,12 @@ export function PageHeader({
         className,
       )}
     >
-      <div className="grid gap-1">
-        <h1 className="text-xl font-semibold tracking-tight">{title}</h1>
+      <div className="grid gap-1.5">
+        <h1 className="font-display text-3xl leading-none tracking-wide text-foreground md:text-4xl">
+          {title}
+        </h1>
         {description ? (
-          <p className="max-w-2xl text-sm text-muted-foreground">
+          <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
             {description}
           </p>
         ) : null}

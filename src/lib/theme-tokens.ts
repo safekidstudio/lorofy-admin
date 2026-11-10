@@ -35,16 +35,16 @@ export const COLOR_PRESETS: Record<ColorPreset, ColorPresetDef> = {
   forest: {
     id: "forest",
     label: "Forest (Lorofy)",
-    previewColor: "#0d5338",
+    previewColor: "#071b12",
     light: {
-      primary: "oklch(0.18 0.03 155)",
-      primaryForeground: "oklch(0.99 0 0)",
-      ring: "oklch(0.18 0.03 155)",
+      primary: "#071b12",
+      primaryForeground: "#ffffff",
+      ring: "#071b12",
     },
     dark: {
-      primary: "oklch(0.72 0.17 150)",
-      primaryForeground: "oklch(0.12 0.02 155)",
-      ring: "oklch(0.72 0.17 150)",
+      primary: "#f2f2f7",
+      primaryForeground: "#071b12",
+      ring: "#f2f2f7",
     },
   },
   blue: {
@@ -125,10 +125,10 @@ export const COLOR_PRESETS: Record<ColorPreset, ColorPresetDef> = {
 };
 
 export const RADIUS_OPTIONS = [
-  { value: 0.3, label: "0.3 (Compact)" },
-  { value: 0.5, label: "0.5 (Default)" },
+  { value: 0.5, label: "0.5 (Compact)" },
   { value: 0.75, label: "0.75 (Soft)" },
-  { value: 1.0, label: "1.0 (Rounded)" },
+  { value: 1.0, label: "1.0 (Lorofy)" },
+  { value: 1.25, label: "1.25 (Extra round)" },
 ] as const;
 
 export interface ThemeSettings {
@@ -145,7 +145,7 @@ export interface ThemeSettings {
 export const DEFAULT_THEME_SETTINGS: ThemeSettings = {
   theme: "light",
   colorPreset: "forest",
-  radius: 0.5,
+  radius: 1.0,
   layoutDensity: "comfortable",
   contentWidth: "full",
   sidebarVariant: "sidebar",

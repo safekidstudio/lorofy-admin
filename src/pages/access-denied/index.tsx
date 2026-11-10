@@ -31,7 +31,7 @@ export function AccessDeniedPage() {
           <div className="mx-auto mb-3 flex size-14 items-center justify-center rounded-2xl bg-destructive/10 text-destructive shadow-xs">
             <HugeIcon icon={ShieldAlertIcon} size={28} />
           </div>
-          <CardTitle className="text-xl font-bold tracking-tight">
+          <CardTitle className="font-display text-2xl tracking-wide">
             Restricted Access
           </CardTitle>
           <CardDescription className="text-sm">

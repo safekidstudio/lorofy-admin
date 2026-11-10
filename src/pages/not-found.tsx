@@ -15,7 +15,7 @@ export function NotFoundPage() {
           </span>
         </div>
         <div className="grid gap-1.5">
-          <h1 className="text-2xl font-semibold tracking-tight">
+          <h1 className="font-display text-3xl tracking-wide">
             Page Not Found
           </h1>
           <p className="text-sm text-muted-foreground">

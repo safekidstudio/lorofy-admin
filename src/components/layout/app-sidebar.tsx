@@ -2,11 +2,11 @@ import { useLogout, useMenu } from "@refinedev/core";
 import { Link, useLocation } from "react-router";
 import {
   Logout01Icon,
-  SproutIcon,
   UnfoldMoreIcon,
   UserIcon,
 } from "@hugeicons/core-free-icons";
 import { HugeIcon } from "@/components/ui/hugeicon";
+import { Logo } from "@/components/logo";
 import { useTheme } from "@/providers/theme-provider";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -71,7 +71,7 @@ export function AppSidebar() {
         sidebarTheme === "dark" && "dark bg-sidebar text-sidebar-foreground border-sidebar-border",
       )}
     >
-      <SidebarHeader className="border-b border-sidebar-border p-2">
+      <SidebarHeader className="border-b border-sidebar-border/70 p-2">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton
@@ -80,17 +80,10 @@ export function AppSidebar() {
               className="group-data-[collapsible=icon]:justify-center"
             >
               <Link to="/dashboard">
-                <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-xs">
-                  <HugeIcon icon={SproutIcon} size={16} />
-                </div>
-                <div className="flex flex-col text-left leading-tight group-data-[collapsible=icon]:hidden">
-                  <span className="text-sm font-semibold tracking-tight text-foreground">
-                    Lorofy
-                  </span>
-                  <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-                    Admin Console
-                  </span>
-                </div>
+                <Logo
+                  iconBoxClassName="size-10"
+                  textClassName="group-data-[collapsible=icon]:hidden"
+                />
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -99,7 +92,9 @@ export function AppSidebar() {
 
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Management</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground/80">
+            Management
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu className="gap-1">
               {visibleMenuItems.map((item) => {
@@ -111,6 +106,7 @@ export function AppSidebar() {
                       asChild
                       isActive={isActive}
                       tooltip={typeof item.label === "string" ? item.label : undefined}
+                      className="h-10 rounded-xl px-3 text-[0.95rem] font-medium text-sidebar-foreground transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-[active=true]:bg-primary data-[active=true]:text-primary-foreground data-[active=true]:shadow-sm data-[active=true]:hover:bg-primary data-[active=true]:hover:text-primary-foreground [&_svg]:size-4.5"
                     >
                       <Link to={item.route ?? "/dashboard"}>
                         {item.icon}
@@ -140,8 +136,8 @@ export function AppSidebar() {
                   className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                   tooltip={identity?.username ?? "User Account"}
                 >
-                  <Avatar className="size-8 rounded-lg">
-                    <AvatarFallback className="rounded-lg bg-primary text-xs font-semibold text-primary-foreground">
+                  <Avatar className="size-8 rounded-full">
+                    <AvatarFallback className="rounded-full bg-primary text-xs font-semibold text-primary-foreground">
                       {initials(identity?.username)}
                     </AvatarFallback>
                   </Avatar>

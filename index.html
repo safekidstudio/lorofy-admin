@@ -3,21 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Lorofy Admin — Platform management console" />
+    <meta
+      name="description"
+      content="Lorofy Admin - platform management console"
+    />
     <meta name="theme-color" content="#071B12" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/fonts/Fredoka-Variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/NerkoOne-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
     />
     <script>
       (() => {
         try {
-          const stored = localStorage.getItem("lorofy.admin.theme.v2") || "light";
+          const raw = localStorage.getItem("lorofy.admin.theme.settings.v1");
+          let theme = "light";
+          if (raw) {
+            try {
+              theme = JSON.parse(raw)?.theme ?? "light";
+            } catch {
+              theme = raw;
+            }
+          }
           const dark =
-            stored === "dark" ||
-            (stored === "system" &&
+            theme === "dark" ||
+            (theme === "system" &&
               window.matchMedia("(prefers-color-scheme: dark)").matches);
           document.documentElement.classList.toggle("dark", dark);
           document.documentElement.style.colorScheme = dark ? "dark" : "light";
@@ -26,7 +45,7 @@
         }
       })();
     </script>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/lorofy.png" />
     <title>Lorofy Admin</title>
   </head>
   <body>

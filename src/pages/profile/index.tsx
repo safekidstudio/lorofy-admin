@@ -136,7 +136,7 @@ export function ProfilePage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight">Account Profile</h1>
+        <h1 className="font-display text-3xl leading-none tracking-wide md:text-4xl">Account Profile</h1>
         <p className="text-sm text-muted-foreground">
           View your gamification progress, active session credentials, and personal preferences.
         </p>
@@ -147,14 +147,14 @@ export function ProfilePage() {
         <CardContent className="pt-6">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-4">
-              <Avatar className="size-16 border-2 border-primary/20 shadow-xs">
-                <AvatarFallback className="bg-primary text-xl font-bold text-primary-foreground">
+              <Avatar className="size-16 rounded-full border-2 border-primary/15 shadow-sm">
+                <AvatarFallback className="rounded-full bg-primary text-xl font-semibold text-primary-foreground">
                   {initials(identity?.username)}
                 </AvatarFallback>
               </Avatar>
               <div className="grid gap-1">
                 <div className="flex items-center gap-2">
-                  <h2 className="text-xl font-bold tracking-tight">
+                  <h2 className="font-display text-2xl tracking-wide">
                     {profile?.displayName ?? identity?.username ?? "User"}
                   </h2>
                   <Badge variant={identity?.role === "USER" ? "secondary" : "default"}>
