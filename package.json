@@ -18,15 +18,12 @@
     "@hookform/resolvers": "^7.0.3",
     "@hugeicons/core-free-icons": "^4.4.0",
     "@hugeicons/react": "^1.1.10",
-    "@react-three/drei": "^10.7.9",
-    "@react-three/fiber": "^9.8.2",
     "@refinedev/core": "^5.0.12",
     "@refinedev/react-hook-form": "^5.0.4",
     "@refinedev/react-router": "^2.0.4",
     "@refinedev/react-table": "^6.0.1",
     "@tanstack/react-query": "^5.107.1",
     "@tanstack/react-table": "^8.21.3",
-    "@types/three": "^0.187.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cn": "^0.5.2",
@@ -39,7 +36,6 @@
     "recharts": "^3.10.1",
     "sonner": "^2.0.8",
     "tailwind-merge": "^3.7.0",
-    "three": "^0.187.0",
     "zod": "^4.6.7"
   },
   "devDependencies": {

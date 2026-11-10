@@ -138,7 +138,7 @@ export function ResourceTable<TData extends BaseRecord = BaseRecord>({
                   value={search}
                   onChange={(event) => setSearch(event.target.value)}
                   placeholder={schema.search?.placeholder ?? "Search records..."}
-                  className="h-8 pl-8"
+                  className="h-9 pl-8"
                   aria-label={`Search ${resourceName}`}
                 />
               </div>
@@ -157,7 +157,7 @@ export function ResourceTable<TData extends BaseRecord = BaseRecord>({
                       }))
                     }
                   >
-                    <SelectTrigger className="h-8 w-fit min-w-fit px-3">
+                    <SelectTrigger className="h-9 w-fit min-w-fit px-3">
                       <SelectValue placeholder={filterDef.placeholder ?? filterDef.label} />
                     </SelectTrigger>
                     <SelectContent>
@@ -173,9 +173,8 @@ export function ResourceTable<TData extends BaseRecord = BaseRecord>({
                 {hasActiveFilters && (
                   <Button
                     variant="ghost"
-                    size="sm"
                     onClick={resetFilters}
-                    className="text-muted-foreground gap-1.5"
+                    className="gap-1.5 text-muted-foreground"
                   >
                     <HugeIcon icon={RotateLeft01Icon} size={14} />
                     Reset

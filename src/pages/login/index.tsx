@@ -100,7 +100,7 @@ export function LoginPage() {
   const isLoading = isPending || isSubmitting;
 
   return (
-    <div className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-hidden bg-background p-3 sm:p-6 lg:p-8">
+    <div className="relative flex h-[100dvh] w-full items-center justify-center overflow-hidden bg-background p-3 sm:p-5 lg:p-6">
       {/* Soft garden glows behind the card */}
       <div
         aria-hidden
@@ -111,10 +111,10 @@ export function LoginPage() {
         className="pointer-events-none absolute -bottom-40 -right-24 size-[26rem] rounded-full bg-[#f4d9a5]/50 blur-3xl"
       />
 
-      <div className="relative z-10 flex min-h-[640px] w-full max-w-5xl overflow-hidden rounded-[2rem] bg-card shadow-[0_40px_120px_-60px_rgba(7,27,18,0.55)] ring-1 ring-black/5 sm:rounded-[2.5rem]">
-        <div className="grid w-full lg:grid-cols-[1.05fr_1fr]">
+      <div className="relative z-10 flex h-full max-h-[45rem] w-full max-w-5xl overflow-hidden rounded-[2rem] bg-card shadow-[0_40px_120px_-60px_rgba(7,27,18,0.55)] ring-1 ring-black/5 sm:rounded-[2.5rem]">
+        <div className="grid h-full min-h-0 w-full lg:grid-cols-[1.05fr_1fr]">
           {/* Brand panel */}
-          <section className="relative hidden flex-col justify-between overflow-hidden bg-[#071B12] p-10 text-white lg:flex xl:p-12">
+          <section className="relative hidden flex-col justify-between overflow-hidden bg-[#071B12] p-7 text-white lg:flex xl:p-9">
             <div
               aria-hidden
               className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-[#1f9d55]/30 blur-3xl"
@@ -144,18 +144,18 @@ export function LoginPage() {
                 </div>
               </div>
 
-              <h1 className="mt-14 max-w-sm font-display text-5xl leading-[0.95] tracking-wide text-white xl:text-6xl">
+              <h1 className="mt-8 max-w-sm font-display text-4xl leading-[0.95] tracking-wide text-white xl:mt-10 xl:text-5xl">
                 Grow something good today.
               </h1>
-              <p className="mt-5 max-w-sm text-[0.95rem] leading-relaxed text-white/65">
+              <p className="mt-4 max-w-sm text-[0.95rem] leading-relaxed text-white/65">
                 One calm place to look after the people, mascots and little
                 rituals that make Lorofy feel alive.
               </p>
 
-              <div className="mt-10 grid gap-4">
+              <div className="mt-6 grid gap-3">
                 {HIGHLIGHTS.map(({ icon, title, description }) => (
                   <div key={title} className="flex items-start gap-3.5">
-                    <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-[#b9e7ae] ring-1 ring-white/10">
+                    <span className="grid size-9 shrink-0 place-items-center rounded-2xl bg-white/10 text-[#b9e7ae] ring-1 ring-white/10">
                       <HugeIcon icon={icon} size={19} />
                     </span>
                     <div className="min-w-0">
@@ -171,7 +171,7 @@ export function LoginPage() {
               </div>
             </div>
 
-            <div className="relative z-10 flex items-center justify-between pt-10 text-[11px] text-white/35">
+            <div className="relative z-10 flex items-center justify-between pt-6 text-[11px] text-white/35">
               <span>© {new Date().getFullYear()} Lorofy</span>
               <span className="rounded-full border border-white/10 px-3 py-1">
                 Made for focused people
@@ -180,9 +180,9 @@ export function LoginPage() {
           </section>
 
           {/* Sign-in form */}
-          <section className="flex flex-col justify-center px-5 py-10 sm:px-12 lg:px-14">
-            <div className="mx-auto w-full max-w-sm">
-              <div className="mb-8 lg:hidden">
+          <section className="flex min-h-0 flex-col overflow-y-auto px-5 py-6 sm:px-10 lg:px-12">
+            <div className="mx-auto my-auto w-full max-w-sm">
+              <div className="mb-5 lg:hidden">
                 <div className="flex items-center gap-2.5">
                   <span className="grid size-11 place-items-center overflow-hidden rounded-2xl bg-white ring-1 ring-black/5">
                     <img
@@ -198,21 +198,21 @@ export function LoginPage() {
                 </div>
               </div>
 
-              <div className="mb-7">
+              <div className="mb-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                   Admin access
                 </p>
-                <h2 className="mt-2 font-display text-4xl leading-none tracking-wide text-foreground">
+                <h2 className="mt-1.5 font-display text-3xl leading-none tracking-wide text-foreground xl:text-4xl">
                   Welcome back
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   Sign in to keep the Lorofy garden growing.
                 </p>
               </div>
 
-              <form onSubmit={handleFormSubmit} className="space-y-5" noValidate>
+              <form onSubmit={handleFormSubmit} className="space-y-4" noValidate>
                 <FieldSet>
-                  <FieldGroup className="space-y-5">
+                  <FieldGroup className="space-y-4">
                     <Controller
                       name="email"
                       control={control}
@@ -224,7 +224,7 @@ export function LoginPage() {
                           >
                             Email
                           </FieldLabel>
-                          <InputGroup className="h-12 rounded-full border-border bg-muted/40 px-4 focus-within:bg-card">
+                          <InputGroup className="h-11 rounded-full border-border bg-muted/40 px-4 focus-within:bg-card">
                             <InputGroupAddon>
                               <HugeIcon
                                 icon={Mail02Icon}
@@ -260,7 +260,7 @@ export function LoginPage() {
                           >
                             Password
                           </FieldLabel>
-                          <InputGroup className="h-12 rounded-full border-border bg-muted/40 px-4 focus-within:bg-card">
+                          <InputGroup className="h-11 rounded-full border-border bg-muted/40 px-4 focus-within:bg-card">
                             <InputGroupAddon>
                               <HugeIcon
                                 icon={SquareLock02Icon}
@@ -326,7 +326,7 @@ export function LoginPage() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="h-12 w-full rounded-full text-[0.95rem] font-semibold shadow-sm"
+                      className="h-11 w-full rounded-full text-[0.95rem] font-semibold shadow-sm"
                       isLoading={isLoading}
                     >
                       {isLoading ? "Signing in..." : "Sign in"}
@@ -335,7 +335,7 @@ export function LoginPage() {
                 </FieldSet>
               </form>
 
-              <div className="mt-8 rounded-2xl border border-border/80 bg-muted/40 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
+              <div className="mt-5 rounded-2xl border border-border/80 bg-muted/40 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
                 This console is for the Lorofy team. Need access?{" "}
                 <a
                   href="mailto:admin@lorofy.space"

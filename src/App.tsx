@@ -4,25 +4,14 @@ import routerProvider, {
   NavigateToResource,
   UnsavedChangesNotifier,
 } from "@refinedev/react-router";
+import { lazy } from "react";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router";
 import { AdminLayout } from "@/components/layout/admin-layout";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { APP_NAME } from "@/lib/env";
-import { DashboardPage } from "@/pages/dashboard";
 import { LoginPage } from "@/pages/login";
-import { MascotCreatePage } from "@/pages/mascots/create";
-import { MascotEditPage } from "@/pages/mascots/edit";
-import { MascotListPage } from "@/pages/mascots/list";
-import { MascotShowPage } from "@/pages/mascots/show";
-import { CategoryListPage } from "@/pages/categories/list";
-import { BadgeListPage } from "@/pages/badges/list";
-import { ProfilePage } from "@/pages/profile";
 import { AccessDeniedPage } from "@/pages/access-denied";
-import { NotFoundPage } from "@/pages/not-found";
-import { UserEditPage } from "@/pages/users/edit";
-import { UserListPage } from "@/pages/users/list";
-import { UserShowPage } from "@/pages/users/show";
 import { AdminGuard } from "@/components/layout/admin-guard";
 import { accessControlProvider } from "@/providers/access-control-provider";
 import { authProvider } from "@/providers/auth-provider";
@@ -38,6 +27,45 @@ import {
   UserIcon,
 } from "@hugeicons/core-free-icons";
 import { HugeIcon } from "@/components/ui/hugeicon";
+
+const DashboardPage = lazy(() =>
+  import("@/pages/dashboard").then((m) => ({ default: m.DashboardPage })),
+);
+const UserListPage = lazy(() =>
+  import("@/pages/users/list").then((m) => ({ default: m.UserListPage })),
+);
+const UserShowPage = lazy(() =>
+  import("@/pages/users/show").then((m) => ({ default: m.UserShowPage })),
+);
+const UserEditPage = lazy(() =>
+  import("@/pages/users/edit").then((m) => ({ default: m.UserEditPage })),
+);
+const MascotListPage = lazy(() =>
+  import("@/pages/mascots/list").then((m) => ({ default: m.MascotListPage })),
+);
+const MascotCreatePage = lazy(() =>
+  import("@/pages/mascots/create").then((m) => ({ default: m.MascotCreatePage })),
+);
+const MascotShowPage = lazy(() =>
+  import("@/pages/mascots/show").then((m) => ({ default: m.MascotShowPage })),
+);
+const MascotEditPage = lazy(() =>
+  import("@/pages/mascots/edit").then((m) => ({ default: m.MascotEditPage })),
+);
+const CategoryListPage = lazy(() =>
+  import("@/pages/categories/list").then((m) => ({
+    default: m.CategoryListPage,
+  })),
+);
+const BadgeListPage = lazy(() =>
+  import("@/pages/badges/list").then((m) => ({ default: m.BadgeListPage })),
+);
+const ProfilePage = lazy(() =>
+  import("@/pages/profile").then((m) => ({ default: m.ProfilePage })),
+);
+const NotFoundPage = lazy(() =>
+  import("@/pages/not-found").then((m) => ({ default: m.NotFoundPage })),
+);
 
 export function App() {
   return (

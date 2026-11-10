@@ -1,5 +1,6 @@
-import type { ReactNode } from "react";
+import { type ReactNode, Suspense } from "react";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { RouteLoader } from "@/components/route-loader";
 import { useTheme } from "@/providers/theme-provider";
 import { cn } from "@/lib/utils";
 import { AppHeader } from "./app-header";
@@ -19,7 +20,7 @@ export function AdminLayout({ children }: { children: ReactNode }) {
             contentWidth === "boxed" ? "mx-auto w-full max-w-7xl" : "w-full",
           )}
         >
-          {children}
+          <Suspense fallback={<RouteLoader />}>{children}</Suspense>
         </main>
       </SidebarInset>
     </SidebarProvider>
