@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <title>Lorofy Admin</title>
+  <rect width="32" height="32" rx="9" fill="#16281d"/>
+  <path d="M9 22V10h3.4v9.3H22V22H9Z" fill="#8fd6a6"/>
+  <circle cx="22.4" cy="11.4" r="2.6" fill="#8fd6a6"/>
+</svg>
